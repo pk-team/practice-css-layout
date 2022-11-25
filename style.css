@@ -1,0 +1,54 @@
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primaryColor: rgb(59, 59, 170);
+
+    --bodyFont: sans-serif;
+    --textColor: #444;
+    --appBarHeight: 50px;
+    --line: #ccc;
+}
+
+html, body {
+    height: 100vh;
+}
+
+body {
+    font-family: var(--bodyFont);
+    color: var(--textColor);
+
+}
+
+.site-wrap {
+    display: grid;
+    grid-template-rows: var(--appBarHeight) 1fr;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+        "app-bar app-bar"
+        "nav body";
+
+    height: 100%;
+    border: 3px solid blue;
+}
+
+.app-bar {
+    background: var(--primaryColor);
+    grid-area: app-bar;
+}
+
+.nav {
+    border-right: 1px solid var(--line);
+    height: 100%;
+    grid-area: nav;
+    background: #faa;
+}
+
+.body {
+    height: 100%;
+    background: #aaf;
+    grid-area: body;
+}
